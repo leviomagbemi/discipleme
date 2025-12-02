@@ -1,3 +1,5 @@
+import { getBooks } from "./api.mjs";
+
 export async function loadTemplate(path){
   const file = await fetch(path);
   const result = await file.text();

@@ -10,6 +10,7 @@
     content="Make scripture memorization fun with DiscipleMe. Turn Bible study into an interactive game, track your progress, and get AI-powered spiritual insights.">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/home.css">
   <title>discipleme</title>
   <script type="module" src="js/main.js"></script>
 </head>
@@ -19,9 +20,91 @@
     <!-- Dynamic Content -->
   </header>
 
-  <body>
+  <main>
+    <section class="scripture-reference-section">
+      <div class="container">
+        <div class="books-button">
+          <button class="active">Old Testament</button>
+          <button>New Testament</button>
+        </div>
 
-  </body>
+        <div class="book">
+          <label for="books">Book</label>
+          <select name="books" id="books">
+            <option value="GEN">Genesis</option>
+            <option value="Exodus">Exodus</option>
+            <option value="Leviticus">Leviticus</option>
+          </select>
+        </div>
+
+        <div class="chapter-verse">
+          <div class="chapter">
+            <label for="chapter">Chapter</label>
+            <select name="chapter" id="chapter">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+
+          <div class="verse">
+            <label for="verse-choice">Verse</label>
+            <input list="verse" id="verse-choice" name="verse-choice" placeholder="e.g. 1-2">
+
+            <datalist id="verse">
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+            </datalist>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="difficulty-section">
+      <div class="container">
+        <h2>Challenge Level</h2>
+
+        <div>
+          <button class="active">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640">
+              <path
+                d="M535.3 70.7C541.7 64.6 551 62.4 559.6 65.2C569.4 68.5 576 77.7 576 88L576 274.9C576 406.1 467.9 512 337.2 512C260.2 512 193.8 462.5 169.7 393.3C134.3 424.1 112 469.4 112 520C112 533.3 101.3 544 88 544C74.7 544 64 533.3 64 520C64 445.1 102.2 379.1 160.1 340.3C195.4 316.7 237.5 304 280 304L360 304C373.3 304 384 293.3 384 280C384 266.7 373.3 256 360 256L280 256C240.3 256 202.7 264.8 169 280.5C192.3 210.5 258.2 160 336 160C402.4 160 451.8 137.9 484.7 116C503.9 103.2 520.2 87.9 535.4 70.7z" />
+            </svg>
+            Easy
+            <small>Hide 20%</small>
+          </button>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640">
+              <path
+                d="M296.5 69.2C311.4 62.3 328.6 62.3 343.5 69.2L562.1 170.2C570.6 174.1 576 182.6 576 192C576 201.4 570.6 209.9 562.1 213.8L343.5 314.8C328.6 321.7 311.4 321.7 296.5 314.8L77.9 213.8C69.4 209.8 64 201.3 64 192C64 182.7 69.4 174.1 77.9 170.2L296.5 69.2zM112.1 282.4L276.4 358.3C304.1 371.1 336 371.1 363.7 358.3L528 282.4L562.1 298.2C570.6 302.1 576 310.6 576 320C576 329.4 570.6 337.9 562.1 341.8L343.5 442.8C328.6 449.7 311.4 449.7 296.5 442.8L77.9 341.8C69.4 337.8 64 329.3 64 320C64 310.7 69.4 302.1 77.9 298.2L112 282.4zM77.9 426.2L112 410.4L276.3 486.3C304 499.1 335.9 499.1 363.6 486.3L527.9 410.4L562 426.2C570.5 430.1 575.9 438.6 575.9 448C575.9 457.4 570.5 465.9 562 469.8L343.4 570.8C328.5 577.7 311.3 577.7 296.4 570.8L77.9 469.8C69.4 465.8 64 457.3 64 448C64 438.7 69.4 430.1 77.9 426.2z" />
+            </svg>
+            Medium
+            <small>Hide 50%</small>
+          </button>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640">
+              <path
+                d="M184 120C184 89.1 209.1 64 240 64L264 64C281.7 64 296 78.3 296 96L296 544C296 561.7 281.7 576 264 576L232 576C202.2 576 177.1 555.6 170 528C169.3 528 168.7 528 168 528C123.8 528 88 492.2 88 448C88 430 94 413.4 104 400C84.6 385.4 72 362.2 72 336C72 305.1 89.6 278.2 115.2 264.9C108.1 252.9 104 238.9 104 224C104 179.8 139.8 144 184 144L184 120zM456 120L456 144C500.2 144 536 179.8 536 224C536 239 531.9 253 524.8 264.9C550.5 278.2 568 305 568 336C568 362.2 555.4 385.4 536 400C546 413.4 552 430 552 448C552 492.2 516.2 528 472 528C471.3 528 470.7 528 470 528C462.9 555.6 437.8 576 408 576L376 576C358.3 576 344 561.7 344 544L344 96C344 78.3 358.3 64 376 64L400 64C430.9 64 456 89.1 456 120z" />
+            </svg>
+            Hard
+            <small>Hide All</small>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <button>Start Memorizing <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path 
+          fill="#fff"
+          d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></button>
+      </div>
+    </section>
+  </main>
 
   <footer id="main-footer">
     <!-- Dynamic Content -->

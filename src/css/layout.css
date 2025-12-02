@@ -1,9 +1,24 @@
-#main-header .container {
+.container {
+  max-width: 1170px;
+  margin: auto;
+  padding: 16px;
+}
+
+main {
+  padding-top: 70px;
+}
+
+#main-header {
+  border-bottom: 2px solid var(--primary-light);
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+}
+
+#main-header .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1170px;
-  margin: auto;
   height: 70px;
   padding: 0 16px;
 
