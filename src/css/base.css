@@ -36,3 +36,7 @@ img {
 section {
   padding: 32px 0;
 }
+
+button {
+  cursor: pointer;
+}
