@@ -80,6 +80,12 @@ input, select, datalist {
       font-weight: 700;
       font-size: 18px;
 
+      &.active {
+        border-color: var(--primary); /* Highlight border */
+        background-color: var(--primary-light); /* Light background highlight */
+        transform: scale(1.05); /* Slight pop effect */
+      }
+
       small {
         font-weight: 100;
         font-size: 12px;
@@ -88,6 +94,8 @@ input, select, datalist {
       svg {
         width: 44px;
       }
+
+      
     }
   }
 
