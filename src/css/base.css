@@ -40,3 +40,36 @@ section {
 button {
   cursor: pointer;
 }
+
+/* NEW: Reusable Button Styles */
+.btn-primary {
+  height: 44px;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px; /* Add padding so text doesn't hit edges */
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:active {
+  background-color: var(--primary-light); /* Darker blue on click? or lighter? Let's use opacity usually, but here distinct color */
+  opacity: 0.9;
+}
+
+.btn-primary svg {
+  width: 22px;
+  fill: #fff; /* Ensure icons inside are white */
+}
+
+/* Utility for full width buttons (like Start Memorizing) */
+.w-full {
+  width: 100%;
+}

@@ -116,3 +116,191 @@ input, select, datalist {
     }
   }
 }
+
+/* --- Game Container Styles --- */
+
+.cta-section {
+  border-top: 2px solid var(--primary-light);
+  /* button styles moved to base.css */
+}
+
+/* Game Container Styles */
+#game-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 70px);
+  position: relative;
+  background-color: #fff;
+}
+
+/* 1. Top Bar */
+.game-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #fff;
+  border-bottom: 2px solid var(--primary-light);
+  gap: 12px; /* Add gap between items */
+}
+
+/* UPDATED: Close button specific overrides */
+.close-btn {
+  /* It inherits .btn-primary styles from HTML class */
+  padding: 0 12px; /* Slightly tighter padding for the top bar */
+  font-size: 0.9rem;
+}
+
+.audio-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+.progress-wrapper {
+  flex-grow: 1;
+  margin: 0 16px;
+  height: 10px;
+  background-color: var(--primary-light);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--primary);
+  width: 0%; 
+  transition: width 0.3s ease;
+}
+
+/* 2. Scripture Display */
+.scripture-display {
+  padding: 24px 16px;
+  flex-grow: 1;
+  overflow-y: auto;
+  /* Add padding at bottom so text isn't hidden behind the fixed word bank */
+  padding-bottom: 220px; 
+}
+
+.reference-pill {
+  display: inline-block;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.scripture-text {
+  font-family: var(--font-scripture);
+  font-size: 1.5rem; /* Large readable text for mobile */
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+.blank-slot {
+  display: inline-block;
+  min-width: 80px;
+  border-bottom: 2px dashed var(--text-muted);
+  margin: 0 4px;
+  text-align: center;
+  color: var(--primary);
+  font-weight: bold;
+  vertical-align: baseline;
+}
+
+.blank-slot.filled {
+  border-bottom: 2px solid var(--primary);
+}
+
+/* 3. Word Bank (Bottom Sheet) */
+.word-bank {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 2px solid var(--primary-light);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 16px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+  z-index: 100;
+  /* Height Management */
+  max-height: 40vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bank-handle {
+  width: 40px;
+  height: 5px;
+  background-color: var(--text-muted); /* Using muted text color for handle */
+  opacity: 0.3;
+  border-radius: 2.5px;
+  margin: 0 auto 16px auto;
+}
+
+.bank-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.bank-title {
+  font-family: var(--font-ui); /* Matches the handwriting style in sketch but clean */
+  font-weight: 700;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.hint-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.word-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  overflow-y: auto;
+  padding-bottom: 16px; /* Extra space for scrolling */
+}
+
+.word-chip {
+  background-color: #fff;
+  border: 2px solid var(--primary-light); 
+  border-radius: 20px;
+  padding: 10px 18px; /* Comfortable touch target */
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none; /* Prevents text selection on tap */
+}
+
+.word-chip:active {
+  background-color: var(--primary-light);
+  transform: scale(0.95);
+  border-color: var(--primary);
+}

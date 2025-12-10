@@ -8,11 +8,10 @@ export async function getBooks(){
     return result.books;
 }
 
-// Get Genesis 1 from the open-cross-ref dataset
-export async function getBookChapter (book, chapter){
+// Get number of verses in a chapter
+export async function getChapterVerses (book, chapter){
     const data = await fetch(`https://bible.helloao.org/api/d/${dataset}/${book}/${chapter}.json`);
     const result = await data.json();
-    console.log(result);
     return result;
 }
 
@@ -31,6 +30,5 @@ export async function getVerse(book, chapter, verse) {
     }
 
     const result = await response.json();
-    console.log(result);
     return result;
 }
