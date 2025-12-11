@@ -1,8 +1,8 @@
-const translation = 'KJVA'; 
+const translation = 'KJV'; 
 
 // Get the list of books
 export async function getBooks(){
-    const data = await fetch(`https://bible.helloao.org/api/${translation}/books.json`);
+    const data = await fetch(`https://bible.helloao.org/api/BSB/books.json`);
     const result = await data.json();
     return result.books; // Returns the array of book objects
 }
@@ -32,3 +32,4 @@ export async function getVerse(book, chapter, verse) {
     const result = await response.json();
     return result;
 }
+

@@ -4,6 +4,7 @@ import { getVerseInsight, getVersePrayer } from "./ai.mjs";
 
 const booksElement = document.getElementById("books");
 const chaptersElement = document.getElementById("chapters");
+const verseElement = document.getElementById("verse-choice");
 const startButton = document.querySelector(".cta-section button");
 const difficultyButtons = document.querySelectorAll(".difficulty-section button");
 // Select the testament toggle buttons
@@ -58,6 +59,11 @@ difficultyButtons.forEach(button => {
 });
 
 startButton.addEventListener("click", () => {
+    if(booksElement.value == "" || chaptersElement.value == "" || verseElement.value == ""){
+        alert("Missing Book, Chapter or Verse!!");
+        return;
+    }
+
   const book = booksElement.value;
   const chapter = chaptersElement.value;
   const verse = document.getElementById("verse-choice").value || "1"; 

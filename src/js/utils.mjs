@@ -1,4 +1,4 @@
-import { getBooks, getChapterVerses, getVerse } from "./api.mjs";
+import { getBooks, getChapterVerses } from "./api.mjs";
 
 let books = [];
 try {
@@ -121,14 +121,14 @@ export async function loadNumberOfVerses(book, chapter){
 
       if (verses && verses.chapter && verses.chapter.content){
         const versesContent = verses.chapter.content;
-
+        console.log(versesContent)
         versesContent.forEach((verse) => {
-          if(verse.type === 'verse') {
+          
               const verseElement = document.createElement("option");
-              verseElement.value = verse.number;
-              // verseElement.textContent = verse.number; // Datalist doesn't strictly need textContent if value is set
+              verseElement.value = verse.verse;
+              verseElement.textContent = verse.verse
               versesElement.appendChild(verseElement);
-          }
+         
         });
       }
   } catch (error) {
