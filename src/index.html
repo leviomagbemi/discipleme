@@ -5,159 +5,497 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/images/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Levi Omagbemi">
+  <meta name="author" content="Creators Lab">
   <meta name="description"
-    content="Make scripture memorization fun with DiscipleMe. Turn Bible study into an interactive game, track your progress, and get AI-powered spiritual insights.">
+    content="Transform scripture memorization into an engaging journey. DiscipleMe uses gamification, AI insights, and progress tracking to help you master God's Word.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://discipleme.vercel.app/" />
-  <meta property="og:title" content="DiscipleMe - Gamified Scripture Memorization" />
-  <meta property="og:description" content="Master Bible verses with fun interactive games, track your streak, and get AI-powered insights. Join the movement!" />
+  <meta property="og:title" content="DiscipleMe - Transform Scripture into Memory" />
+  <meta property="og:description"
+    content="Master Bible verses with fun interactive games, track your streak, and get AI-powered insights. A Creators Lab product." />
   <meta property="og:image" content="https://discipleme.vercel.app/images/og-image.jpg" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://discipleme.vercel.app/" />
-  <meta property="twitter:title" content="DiscipleMe - Gamified Scripture Memorization" />
-  <meta property="twitter:description" content="Master Bible verses with fun interactive games, track your streak, and get AI-powered insights." />
+  <meta property="twitter:title" content="DiscipleMe - Transform Scripture into Memory" />
+  <meta property="twitter:description"
+    content="Master Bible verses with fun interactive games, track your streak, and get AI-powered insights." />
   <meta property="twitter:image" content="https://discipleme.vercel.app/images/og-image.jpg" />
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/dashboard.css">
   <link rel="stylesheet" href="css/home.css">
-  <title>discipleme</title>
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/profile.css">
+
+  <title>DiscipleMe - Transform Scripture into Memory</title>
   <script type="module" src="js/main.js"></script>
 </head>
 
 <body>
-  <header id="main-header">
+  <!-- Header -->
+  <header id="main-header" class="header">
     <!-- Dynamic Content -->
   </header>
 
   <main>
-    <section class="scripture-reference-section">
-      <div class="container">
-        <div class="books-button">
-          <button class="active">Old Testament</button>
-          <button>New Testament</button>
+    <!-- ========== LANDING VIEW (Unauthenticated) ========== -->
+    <div id="landing-view" class="view">
+
+      <!-- Hero Section -->
+      <section class="landing-hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <div class="creators-lab-badge">
+                <img src="/images/creators-lab-logo.png" alt="Creators Lab">
+                <span>A Creators Lab Product</span>
+              </div>
+              <h1>
+                <span>Transform</span>
+                <span class="gradient-text">Scripture</span>
+                <span>into Memory</span>
+              </h1>
+              <p class="hero-subtitle">
+                Master God's Word through gamified learning, AI-powered insights, and a community of disciples. Your
+                spiritual journey, elevated.
+              </p>
+              <div class="hero-cta">
+                <button class="btn-primary btn-lg" id="hero-get-started">
+                  <i class="fa-solid fa-rocket"></i>
+                  Get Started Free
+                </button>
+                <button class="btn-secondary btn-lg" id="hero-learn-more">
+                  <i class="fa-solid fa-play"></i>
+                  Watch Demo
+                </button>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <div class="hero-glow-orb"></div>
+              <div class="hero-phone-mockup">
+                <div class="hero-phone-screen">
+                  <div class="app-preview-icon">📖</div>
+                  <h4>DiscipleMe</h4>
+                  <p>Memorize • Meditate • Master</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="landing-stats">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-value">10K+</div>
+              <div class="stat-label">Verses Mastered</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">500+</div>
+              <div class="stat-label">Active Disciples</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">66</div>
+              <div class="stat-label">Books Available</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">∞</div>
+              <div class="stat-label">Spiritual Growth</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="landing-features">
+        <div class="container">
+          <div class="section-header">
+            <h2>Why <span class="gradient-text">DiscipleMe</span>?</h2>
+            <p>We've reimagined scripture memorization for the modern disciple</p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🎮</div>
+              <h3>Gamified Learning</h3>
+              <p>Turn memorization into an engaging game with difficulty levels, streaks, and achievements that keep you
+                motivated.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🤖</div>
+              <h3>AI-Powered Insights</h3>
+              <p>Get personalized verse explanations, historical context, and AI-generated prayers tailored to your
+                learning.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">📊</div>
+              <h3>Progress Tracking</h3>
+              <p>Watch your spiritual growth with detailed stats, mastery tracking, and achievements you can share.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">📱</div>
+              <h3>Works Offline</h3>
+              <p>Download verses for offline access. Perfect for your quiet time, commute, or anywhere without internet.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🌙</div>
+              <h3>Beautiful Experience</h3>
+              <p>A stunning dark-mode interface designed for focus and minimal eye strain during your study sessions.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">💝</div>
+              <h3>Community Supported</h3>
+              <p>Free to use forever. Supported by a community of believers who want to spread God's Word.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="landing-how-it-works">
+        <div class="container">
+          <div class="section-header">
+            <h2>How It <span class="gradient-text">Works</span></h2>
+            <p>Start memorizing scripture in 3 simple steps</p>
+          </div>
+
+          <div class="steps-container">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <h3>Choose Your Verse</h3>
+              <p>Select any book, chapter, and verse from the entire Bible. Old or New Testament.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <h3>Pick Your Challenge</h3>
+              <p>Easy, Medium, or Hard mode. We'll hide words and you fill them in from memory.</p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <h3>Master & Grow</h3>
+              <p>Complete the verse, earn streaks, and watch your scripture knowledge grow daily.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="landing-cta">
+        <div class="container">
+          <div class="cta-box">
+            <h2>Ready to <span class="gradient-text">Transform</span> Your Scripture Study?</h2>
+            <p>Join thousands of disciples who are making scripture memorization a daily habit.</p>
+            <button class="btn-primary btn-lg" id="cta-get-started">
+              <i class="fa-solid fa-cross"></i>
+              Start Your Journey
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========== APP VIEW (Authenticated) ========== -->
+    <div id="app-view" class="view hidden">
+      <div class="dashboard container">
+
+        <!-- Welcome Section -->
+        <div class="dashboard-welcome">
+          <p class="welcome-greeting">Welcome back,</p>
+          <h2 class="welcome-name" id="dashboard-user-name">Disciple</h2>
+          <div class="welcome-streak">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path fill="#F59E0B"
+                d="M256.5 37.6C265.8 29.8 279.5 30.1 288.4 38.5C300.7 50.1 311.7 62.9 322.3 75.9C335.8 92.4 352 114.2 367.6 140.1C372.8 133.3 377.6 127.3 381.8 122.2C382.9 120.9 384 119.5 385.1 118.1C393 108.3 402.8 96 415.9 96C429.3 96 438.7 107.9 446.7 118.1C448 119.8 449.3 121.4 450.6 122.9C460.9 135.3 474.6 153.2 488.3 175.3C515.5 219.2 543.9 281.7 543.9 351.9C543.9 475.6 443.6 575.9 319.9 575.9C196.2 575.9 96 475.7 96 352C96 260.9 137.1 182 176.5 127C196.4 99.3 216.2 77.1 231.1 61.9C239.3 53.5 247.6 45.2 256.6 37.7zM321.7 480C347 480 369.4 473 390.5 459C432.6 429.6 443.9 370.8 418.6 324.6C414.1 315.6 402.6 315 396.1 322.6L370.9 351.9C364.3 359.5 352.4 359.3 346.2 351.4C328.9 329.3 297.1 289 280.9 268.4C275.5 261.5 265.7 260.4 259.4 266.5C241.1 284.3 207.9 323.3 207.9 370.8C207.9 439.4 258.5 480 321.6 480z" />
+            </svg>
+            <span class="streak-count" id="dashboard-streak">0</span>
+            <span class="streak-label">day streak</span>
+          </div>
         </div>
 
-        <div class="book">
-          <label for="books">Book</label>
-          <select name="books" id="books">
+        <!-- Premium Upgrade Banner (Hidden for Premium Users) -->
+        <div class="premium-banner" id="premium-banner">
+          <div class="premium-banner-content">
+            <h3>🚀 Unlock Unlimited AI Insights</h3>
+            <p>Get AI-powered verse explanations and personalized prayers</p>
+          </div>
+          <button class="btn-upgrade" id="banner-upgrade-btn">
+            <i class="fa-solid fa-crown"></i>
+            Go Premium
+          </button>
+        </div>
+
+        <!-- Step Wizard -->
+        <div class="step-wizard" id="step-wizard">
+          <div class="step-wizard-header">
+            <button class="step-indicator active" data-step="1">
+              <span class="step-number">1</span>
+              <span class="step-label">Choose Scripture</span>
+            </button>
+            <button class="step-indicator" data-step="2">
+              <span class="step-number">2</span>
+              <span class="step-label">Select Difficulty</span>
+            </button>
+            <button class="step-indicator" data-step="3">
+              <span class="step-number">3</span>
+              <span class="step-label">Start Game</span>
+            </button>
+          </div>
+
+          <div class="step-content">
+            <!-- Step 1: Scripture Selection -->
+            <div class="step-panel active" data-step="1">
+              <div class="testament-toggle">
+                <button class="active" data-testament="Old Testament">Old Testament</button>
+                <button data-testament="New Testament">New Testament</button>
+              </div>
+
+              <div class="scripture-selectors">
+                <div class="form-group">
+                  <label class="form-label" for="books">Book</label>
+                  <select name="books" id="books" class="form-input">
+                    <!-- Dynamic -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="chapters">Chapter</label>
+                  <select name="chapters" id="chapters" class="form-input">
+                    <!-- Dynamic -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="verse-choice">Verse</label>
+                  <input list="verses" id="verse-choice" name="verse-choice" class="form-input" placeholder="e.g. 1">
+                  <datalist id="verses"></datalist>
+                </div>
+              </div>
+
+              <div class="step-actions">
+                <div></div>
+                <button class="btn-primary" id="step-1-next">
+                  Continue
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Difficulty Selection -->
+            <div class="step-panel" data-step="2">
+              <div class="difficulty-cards">
+                <div class="difficulty-card active" data-difficulty="easy">
+                  <div class="difficulty-card-icon">🌱</div>
+                  <h4>Easy</h4>
+                  <p>20% of words hidden</p>
+                  <span class="badge badge-success">Beginner</span>
+                </div>
+                <div class="difficulty-card" data-difficulty="medium">
+                  <div class="difficulty-card-icon">🔥</div>
+                  <h4>Medium</h4>
+                  <p>50% of words hidden</p>
+                  <span class="badge badge-warning">Intermediate</span>
+                </div>
+                <div class="difficulty-card" data-difficulty="hard">
+                  <div class="difficulty-card-icon">💪</div>
+                  <h4>Hard</h4>
+                  <p>All words hidden</p>
+                  <span class="badge"
+                    style="background: rgba(239, 68, 68, 0.15); color: var(--accent-error);">Expert</span>
+                </div>
+              </div>
+
+              <div class="step-actions">
+                <button class="btn-back" id="step-2-back">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  Back
+                </button>
+                <button class="btn-primary" id="step-2-next">
+                  Start Memorizing
+                  <i class="fa-solid fa-play"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <h3 class="section-title"><i class="fa-solid fa-bolt"></i> Quick Actions</h3>
+        <div class="quick-actions">
+          <div class="quick-action-card featured" id="random-verse-btn">
+            <div class="quick-action-icon">🎲</div>
+            <div class="quick-action-content">
+              <h4>Random Verse</h4>
+              <p>Let us pick a verse for you</p>
+            </div>
+          </div>
+          <div class="quick-action-card" id="my-profile-btn">
+            <div class="quick-action-icon">📊</div>
+            <div class="quick-action-content">
+              <h4>My Progress</h4>
+              <p>View your mastered scriptures</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily Verse -->
+        <div class="daily-verse-card">
+          <div class="daily-verse-label">✨ Verse of the Day</div>
+          <p class="daily-verse-text" id="daily-verse-text">"For I know the plans I have for you, declares the LORD..."
+          </p>
+          <p class="daily-verse-ref" id="daily-verse-ref">Jeremiah 29:11</p>
+          <button class="btn-primary" id="memorize-daily-btn">
+            <i class="fa-solid fa-book-open"></i>
+            Memorize This Verse
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Game Container (Initially Hidden) -->
+      <section id="game-container" class="hidden">
+        <!-- Top Bar -->
+        <div class="game-top-bar">
+          <button class="close-btn" id="game-back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path fill="currentColor"
+                d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z" />
+            </svg>
+            Back
+          </button>
+
+          <div class="progress-wrapper">
+            <div class="progress-bar" style="width: 0%"></div>
+          </div>
+
+          <button class="audio-btn">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+        </div>
+
+        <!-- Scripture Display -->
+        <div class="scripture-display">
+          <div class="reference-pill">
             <!-- Dynamic Content -->
-          </select>
-        </div>
-
-        <div class="chapter-verse">
-          <div class="chapter">
-            <label for="chapter">Chapter</label>
-            <select name="chapters" id="chapters">
-              <!-- Dynamic Content -->
-            </select>
           </div>
-
-          <div class="verse">
-            <label for="verse-choice">Verse</label>
-            <input list="verses" id="verse-choice" name="verse-choice" placeholder="e.g. 1-2">
-
-            <datalist id="verses">
-              <!-- Dynamic Content -->
-            </datalist>
+          <div class="scripture-text">
+            <!-- Dynamic Content -->
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="difficulty-section">
-      <div class="container">
-        <h2>Challenge Level</h2>
-
-        <div>
-          <button class="active">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-              <path fill="#059669"
-                d="M535.3 70.7C541.7 64.6 551 62.4 559.6 65.2C569.4 68.5 576 77.7 576 88L576 274.9C576 406.1 467.9 512 337.2 512C260.2 512 193.8 462.5 169.7 393.3C134.3 424.1 112 469.4 112 520C112 533.3 101.3 544 88 544C74.7 544 64 533.3 64 520C64 445.1 102.2 379.1 160.1 340.3C195.4 316.7 237.5 304 280 304L360 304C373.3 304 384 293.3 384 280C384 266.7 373.3 256 360 256L280 256C240.3 256 202.7 264.8 169 280.5C192.3 210.5 258.2 160 336 160C402.4 160 451.8 137.9 484.7 116C503.9 103.2 520.2 87.9 535.4 70.7z" />
-            </svg>
-            Easy
-            <small>Hide 20%</small>
-          </button>
-          <button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-              <path fill="#f59e0b"
-                d="M296.5 69.2C311.4 62.3 328.6 62.3 343.5 69.2L562.1 170.2C570.6 174.1 576 182.6 576 192C576 201.4 570.6 209.9 562.1 213.8L343.5 314.8C328.6 321.7 311.4 321.7 296.5 314.8L77.9 213.8C69.4 209.8 64 201.3 64 192C64 182.7 69.4 174.1 77.9 170.2L296.5 69.2zM112.1 282.4L276.4 358.3C304.1 371.1 336 371.1 363.7 358.3L528 282.4L562.1 298.2C570.6 302.1 576 310.6 576 320C576 329.4 570.6 337.9 562.1 341.8L343.5 442.8C328.6 449.7 311.4 449.7 296.5 442.8L77.9 341.8C69.4 337.8 64 329.3 64 320C64 310.7 69.4 302.1 77.9 298.2L112 282.4zM77.9 426.2L112 410.4L276.3 486.3C304 499.1 335.9 499.1 363.6 486.3L527.9 410.4L562 426.2C570.5 430.1 575.9 438.6 575.9 448C575.9 457.4 570.5 465.9 562 469.8L343.4 570.8C328.5 577.7 311.3 577.7 296.4 570.8L77.9 469.8C69.4 465.8 64 457.3 64 448C64 438.7 69.4 430.1 77.9 426.2z" />
-            </svg>
-            Medium
-            <small>Hide 50%</small>
-          </button>
-          <button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-              <path fill="#ef4444"
-                d="M184 120C184 89.1 209.1 64 240 64L264 64C281.7 64 296 78.3 296 96L296 544C296 561.7 281.7 576 264 576L232 576C202.2 576 177.1 555.6 170 528C169.3 528 168.7 528 168 528C123.8 528 88 492.2 88 448C88 430 94 413.4 104 400C84.6 385.4 72 362.2 72 336C72 305.1 89.6 278.2 115.2 264.9C108.1 252.9 104 238.9 104 224C104 179.8 139.8 144 184 144L184 120zM456 120L456 144C500.2 144 536 179.8 536 224C536 239 531.9 253 524.8 264.9C550.5 278.2 568 305 568 336C568 362.2 555.4 385.4 536 400C546 413.4 552 430 552 448C552 492.2 516.2 528 472 528C471.3 528 470.7 528 470 528C462.9 555.6 437.8 576 408 576L376 576C358.3 576 344 561.7 344 544L344 96C344 78.3 358.3 64 376 64L400 64C430.9 64 456 89.1 456 120z" />
-            </svg>
-            Hard
-            <small>Hide All</small>
-          </button>
+        <!-- Word Bank -->
+        <div class="word-bank">
+          <div class="bank-handle"></div>
+          <div class="bank-header">
+            <span class="bank-title">Word Bank</span>
+            <button class="hint-btn">
+              <i class="fa-regular fa-lightbulb"></i> Hint
+            </button>
+          </div>
+          <div class="word-chips-container">
+            <!-- Dynamic Content -->
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
-    <section class="cta-section">
-      <div class="container">
-        <button class="btn-primary w-full">Start Memorizing <svg xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 640 640">
-            <path fill="#fff"
-              d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" />
-          </svg></button>
-      </div>
-    </section>
-
-    <section id="game-container" class="hidden">
-      <!-- Top Bar -->
-      <div class="game-top-bar">
-        <button class="close-btn btn-primary" onclick="window.location.href='/'">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-            <path fill="#fff" d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z"/></svg> Back
-        </button>
-
-        <div class="progress-wrapper">
-          <div class="progress-bar" style="width: 25%"></div>
-        </div>
-        <button class="audio-btn">
-          <i class="fa-solid fa-volume-high"></i>
-        </button>
-      </div>
-
-      <!-- Scripture Display -->
-      <div class="scripture-display">
-        <div class="reference-pill">
-          <!-- Dynamic Content -->
-        </div>
-        <div class="scripture-text">
-          <!-- Dynamic Content -->
-        </div>
-      </div>
-
-      <!-- Word Bank (Bottom Sheet) -->
-      <div class="word-bank">
-        <div class="bank-handle"></div>
-
-        <div class="bank-header">
-          <span class="bank-title">WORD BANK</span>
-          <button class="hint-btn">
-            <i class="fa-regular fa-lightbulb"></i> Hint
-          </button>
+    <!-- ========== PROFILE VIEW ========== -->
+    <div id="profile-view" class="view hidden">
+      <div class="container profile-page">
+        <!-- Profile Header -->
+        <div class="profile-header">
+          <div class="profile-banner"></div>
+          <div class="profile-info">
+            <div class="profile-avatar" id="profile-avatar">
+              <!-- Dynamic: Image or Initial -->
+            </div>
+            <h2 class="profile-name" id="profile-name">Disciple</h2>
+            <p class="profile-email" id="profile-email">email@example.com</p>
+            <div class="profile-badges" id="profile-badges">
+              <!-- Dynamic badges -->
+            </div>
+          </div>
         </div>
 
-        <div class="word-chips-container">
-          <!-- Dynamic Content -->
+        <!-- Stats -->
+        <div class="profile-stats" id="profile-stats">
+          <div class="stat-card">
+            <div class="stat-card-icon">🔥</div>
+            <div class="stat-card-value" id="stat-streak">0</div>
+            <div class="stat-card-label">Day Streak</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon">📖</div>
+            <div class="stat-card-value" id="stat-mastered">0</div>
+            <div class="stat-card-label">Verses Mastered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-icon">⭐</div>
+            <div class="stat-card-value" id="stat-level">1</div>
+            <div class="stat-card-label">Level</div>
+          </div>
+        </div>
+
+        <!-- Scripture Mastery -->
+        <div class="mastery-section">
+          <div class="mastery-header">
+            <h3>📜 Scripture Mastery</h3>
+            <div class="mastery-tabs">
+              <button class="mastery-tab active" data-tab="mastered">Mastered</button>
+              <button class="mastery-tab" data-tab="in-progress">In Progress</button>
+            </div>
+          </div>
+
+          <div class="scripture-list" id="scripture-list">
+            <!-- Dynamic Content -->
+          </div>
+        </div>
+
+        <!-- Settings -->
+        <div class="profile-settings">
+          <h3>⚙️ Settings</h3>
+          <div class="settings-form">
+            <div class="form-group">
+              <label class="form-label" for="display-name">Display Name</label>
+              <input type="text" id="display-name" class="form-input" placeholder="Your name">
+            </div>
+            <div class="settings-actions">
+              <button class="btn-primary" id="save-profile-btn">
+                <i class="fa-solid fa-save"></i>
+                Save Changes
+              </button>
+              <button class="btn-secondary" id="sign-out-profile-btn">
+                <i class="fa-solid fa-sign-out-alt"></i>
+                Sign Out
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer id="main-footer">
+  <!-- Footer -->
+  <footer id="main-footer" class="footer">
     <!-- Dynamic Content -->
   </footer>
 </body>

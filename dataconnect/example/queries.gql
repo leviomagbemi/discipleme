@@ -1,0 +1,33 @@
+mutation CreateUser($username: String!, $email: String!) @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  user_insert(data: {username: $username, email: $email, createdAt_expr: "request.time"})
+}
+
+query GetScriptures @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  scriptures {
+    id
+    reference
+    text
+  }
+}
+
+mutation CreateChallengeAttempt($scriptureId: UUID!, $challengeType: String!, $durationSeconds: Int, $hintsUsed: Int, $score: Int!) @auth(level: USER, insecureReason: "This operation is safe to expose to all logged in users.") {
+  challengeAttempt_insert(data: {
+    scriptureId: $scriptureId,
+    userId_expr: "auth.uid",
+    challengeType: $challengeType,
+    createdAt_expr: "request.time",
+    durationSeconds: $durationSeconds,
+    hintsUsed: $hintsUsed,
+    score: $score
+  })
+}
+
+query GetMyMemorizationPlans @auth(level: USER) {
+  memorizationPlans(where: {userId: {eq_expr: "auth.uid"}}) {
+    id
+    name
+    description
+    startDate
+    endDate
+  }
+}

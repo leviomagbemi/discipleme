@@ -1,0 +1,46 @@
+type User @table {
+  username: String!
+  email: String!
+  createdAt: Timestamp!
+  displayName: String
+  photoUrl: String
+  points: Int
+  lastLogin: Timestamp
+}
+
+type Scripture @table {
+  text: String!
+  reference: String!
+  createdAt: Timestamp!
+  translation: String
+  tags: [String]
+}
+
+type MemorizationPlan @table {
+  user: User!
+  name: String!
+  createdAt: Timestamp!
+  description: String
+  startDate: Date
+  endDate: Date
+}
+
+type PlanScripture @table(key: ["memorizationPlan", "scripture"]) {
+  memorizationPlan: MemorizationPlan!
+  scripture: Scripture!
+  orderInPlan: Int!
+  status: String!
+  lastReviewedAt: Timestamp!
+  nextReviewAt: Timestamp
+  masteryLevel: Int
+}
+
+type ChallengeAttempt @table {
+  user: User!
+  scripture: Scripture!
+  challengeType: String!
+  score: Int!
+  createdAt: Timestamp!
+  durationSeconds: Int
+  hintsUsed: Int
+}

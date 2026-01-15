@@ -1,314 +1,428 @@
-section {
-  padding-right: 16px;
-  padding-left: 16px;
+/* === APP HOME & SCRIPTURE GAME STYLES === */
+
+/* Scripture Selection Section */
+.scripture-selection {
+  padding: var(--space-8) 0;
 }
 
-.container:not(.header-container, .cta-section .container) {
-  border: 1.5px solid var(--primary-light);
-  border-radius: 8px;
+.selection-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-input, select, datalist {
-  width: 100%;
-  height: 44px;
-  padding: 8px;
-  outline: none;
-  border: 2px solid var(--primary-light);
-  border-radius: 8px;
+/* Testament Toggle */
+.books-button {
+  display: flex;
+  background: var(--bg-tertiary);
+  padding: var(--space-1);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
 }
 
-.scripture-reference-section {
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
-    .books-button {
-      display: flex;
-      justify-content: center;
-      background-color: var(--primary-light);
-      padding: 2px;
-      border-radius: 8px;
-
-      button {
-        height: 44px;
-        width: 100%;
-        padding: 0 16px;
-        border: none;
-        background: transparent;
-        border-radius: 8px;
-      }
-
-      .active {
-        background-color: #fff;
-      }
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .chapter-verse {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-
-      > div {
-        flex: 1;
-      }
-    }
-  }
+.books-button button {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  transition: all var(--duration-fast);
 }
 
+.books-button button.active {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.books-button button:hover:not(.active) {
+  color: var(--text-primary);
+}
+
+/* Form Fields */
+.book-selector {
+  margin-bottom: var(--space-6);
+}
+
+.chapter-verse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Difficulty Section */
 .difficulty-section {
-  .container > div {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-
-    button {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      width: 100%;
-      padding: 8px;
-      background-color: #fff;
-      border-radius: 8px;
-      border: 2px solid var(--primary-light);
-      font-weight: 700;
-      font-size: 18px;
-
-      &.active {
-        border-color: var(--primary); /* Highlight border */
-        background-color: var(--primary-light); /* Light background highlight */
-        transform: scale(1.05); /* Slight pop effect */
-      }
-
-      small {
-        font-weight: 100;
-        font-size: 12px;
-      }
-
-      svg {
-        width: 44px;
-      }
-
-      
-    }
-  }
-
-  h2 {
-    margin-bottom: 16px;
-  }
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  max-width: 500px;
+  margin: 0 auto var(--space-6);
 }
 
+.difficulty-section h2 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.difficulty-section > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.difficulty-section button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  transition: all var(--duration-fast);
+}
+
+.difficulty-section button svg {
+  width: 32px;
+  height: 32px;
+}
+
+.difficulty-section button small {
+  font-weight: 400;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.difficulty-section button:hover {
+  border-color: var(--border-default);
+  background: var(--bg-elevated);
+}
+
+.difficulty-section button.active {
+  border-color: var(--brand-blue);
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--text-primary);
+}
+
+/* CTA Section */
 .cta-section {
-  border-top: 2px solid var(--primary-light);
-
-  button {
-    height: 44px;
-    border-radius: 8px;
-    width: 100%;
-    background-color: var(--primary);
-    color: #fff;
-    border: none;
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
-
-    svg {
-      width: 22px;
-    }
-  }
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 var(--space-4) var(--space-8);
 }
 
-/* --- Game Container Styles --- */
-
-.cta-section {
-  border-top: 2px solid var(--primary-light);
-  /* button styles moved to base.css */
-}
-
-/* Game Container Styles */
+/* === GAME CONTAINER === */
 #game-container {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 70px);
-  position: relative;
-  background-color: #fff;
+  min-height: calc(100vh - 70px);
+  background: var(--bg-primary);
 }
 
-/* 1. Top Bar */
+/* Game Top Bar */
 .game-top-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  background-color: #fff;
-  border-bottom: 2px solid var(--primary-light);
-  gap: 12px; /* Add gap between items */
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-/* UPDATED: Close button specific overrides */
 .close-btn {
-  /* It inherits .btn-primary styles from HTML class */
-  padding: 0 12px; /* Slightly tighter padding for the top bar */
-  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  transition: all var(--duration-fast);
 }
 
-.audio-btn {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--text-muted);
-  cursor: pointer;
-  padding: 4px;
-  line-height: 1;
+.close-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.close-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 .progress-wrapper {
-  flex-grow: 1;
-  margin: 0 16px;
-  height: 10px;
-  background-color: var(--primary-light);
-  border-radius: 5px;
+  flex: 1;
+  height: 8px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
   overflow: hidden;
 }
 
 .progress-bar {
   height: 100%;
-  background-color: var(--primary);
-  width: 0%; 
-  transition: width 0.3s ease;
+  background: var(--gradient-brand);
+  border-radius: var(--radius-full);
+  width: 0%;
+  transition: width var(--duration-base) var(--ease-out);
+  box-shadow: var(--glow-brand);
 }
 
-/* 2. Scripture Display */
+.audio-btn {
+  padding: var(--space-2);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: var(--text-xl);
+  transition: color var(--duration-fast);
+}
+
+.audio-btn:hover {
+  color: var(--text-primary);
+}
+
+/* Scripture Display */
 .scripture-display {
-  padding: 24px 16px;
-  flex-grow: 1;
+  flex: 1;
+  padding: var(--space-8) var(--space-4);
+  padding-bottom: 240px; /* Space for word bank */
   overflow-y: auto;
-  /* Add padding at bottom so text isn't hidden behind the fixed word bank */
-  padding-bottom: 220px; 
 }
 
 .reference-pill {
   display: inline-block;
-  background-color: var(--primary-light);
-  color: var(--primary);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin-bottom: 24px;
+  background: var(--gradient-brand);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: var(--text-sm);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-bottom: var(--space-6);
+  box-shadow: var(--glow-brand);
 }
 
 .scripture-text {
-  font-family: var(--font-scripture);
-  font-size: 1.5rem; /* Large readable text for mobile */
-  line-height: 1.6;
-  color: var(--text-main);
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  line-height: 1.8;
+  color: var(--text-primary);
 }
 
+@media (max-width: 640px) {
+  .scripture-text {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Blank Slots */
 .blank-slot {
   display: inline-block;
   min-width: 80px;
+  padding: var(--space-1) var(--space-2);
+  margin: 0 var(--space-1);
   border-bottom: 2px dashed var(--text-muted);
-  margin: 0 4px;
   text-align: center;
-  color: var(--primary);
-  font-weight: bold;
+  color: var(--brand-cyan);
+  font-weight: 600;
+  font-family: var(--font-sans);
   vertical-align: baseline;
+  transition: all var(--duration-fast);
 }
 
 .blank-slot.filled {
-  border-bottom: 2px solid var(--primary);
+  border-bottom: 2px solid var(--brand-cyan);
+  animation: pop 0.3s var(--ease-bounce);
 }
 
-/* 3. Word Bank (Bottom Sheet) */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.blank-slot.correct {
+  color: var(--accent-success);
+  border-color: var(--accent-success);
+}
+
+.blank-slot.wrong {
+  color: var(--accent-error);
+  text-decoration: line-through;
+}
+
+/* Word Bank */
 .word-bank {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  background-color: #fff;
-  border-top: 2px solid var(--primary-light);
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-  padding: 16px;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
-  z-index: 100;
-  /* Height Management */
-  max-height: 40vh;
+  right: 0;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-subtle);
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  padding: var(--space-4);
+  max-height: 45vh;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.3);
+  z-index: var(--z-sticky);
 }
 
 .bank-handle {
   width: 40px;
-  height: 5px;
-  background-color: var(--text-muted); /* Using muted text color for handle */
-  opacity: 0.3;
-  border-radius: 2.5px;
-  margin: 0 auto 16px auto;
+  height: 4px;
+  background: var(--border-strong);
+  border-radius: var(--radius-full);
+  margin: 0 auto var(--space-4);
 }
 
 .bank-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
 }
 
 .bank-title {
-  font-family: var(--font-ui); /* Matches the handwriting style in sketch but clean */
   font-weight: 700;
-  color: var(--text-main);
+  font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 .hint-btn {
-  background: none;
-  border: none;
-  color: var(--text-muted);
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: all var(--duration-fast);
 }
 
+.hint-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--brand-cyan);
+}
+
+.hint-btn.disabled-hint {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.insight-btn {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(255, 0, 110, 0.2));
+  border-color: var(--brand-blue);
+}
+
+.insight-btn:hover {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(255, 0, 110, 0.3));
+  color: var(--brand-pink);
+}
+
+/* Word Chips */
 .word-chips-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--space-2);
   overflow-y: auto;
-  padding-bottom: 16px; /* Extra space for scrolling */
+  padding-bottom: var(--space-4);
 }
 
 .word-chip {
-  background-color: #fff;
-  border: 2px solid var(--primary-light); 
-  border-radius: 20px;
-  padding: 10px 18px; /* Comfortable touch target */
-  font-family: var(--font-ui);
-  font-size: 1rem;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
   font-weight: 500;
-  color: var(--text-main);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none; /* Prevents text selection on tap */
+  font-size: var(--text-base);
+  transition: all var(--duration-fast) var(--ease-default);
+  user-select: none;
+}
+
+.word-chip:hover {
+  background: var(--bg-elevated);
+  border-color: var(--brand-cyan);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
 .word-chip:active {
-  background-color: var(--primary-light);
   transform: scale(0.95);
-  border-color: var(--primary);
+}
+
+/* Win Celebration */
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--z-modal);
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  animation: confetti-fall 3s ease-out forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .difficulty-section > div {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+  }
+  
+  .difficulty-section button {
+    padding: var(--space-3);
+  }
+  
+  .difficulty-section button svg {
+    width: 28px;
+    height: 28px;
+  }
 }

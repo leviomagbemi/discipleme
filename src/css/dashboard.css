@@ -1,0 +1,445 @@
+/* === PREMIUM DASHBOARD STYLES === */
+
+/* Dashboard Container */
+.dashboard {
+  padding: var(--space-6) 0;
+  min-height: calc(100vh - 70px);
+}
+
+/* Welcome Section */
+.dashboard-welcome {
+  text-align: center;
+  margin-bottom: var(--space-8);
+  padding: var(--space-8) var(--space-4);
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.1) 0%, transparent 100%);
+  border-radius: var(--radius-2xl);
+}
+
+.welcome-greeting {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.welcome-name {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+}
+
+.welcome-streak {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--bg-tertiary);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+}
+
+.welcome-streak svg {
+  width: 24px;
+  height: 24px;
+}
+
+.welcome-streak .streak-count {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--brand-cyan);
+}
+
+.welcome-streak .streak-label {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Premium Banner */
+.premium-banner {
+  background: var(--gradient-brand);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  box-shadow: var(--glow-brand);
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.premium-banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.premium-banner-content h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-2);
+}
+
+.premium-banner-content p {
+  opacity: 0.9;
+  font-size: var(--text-sm);
+}
+
+.premium-banner .btn-upgrade {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: all var(--duration-fast);
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.premium-banner .btn-upgrade:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.premium-banner.hidden {
+  display: none;
+}
+
+/* Step Wizard */
+.step-wizard {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  margin-bottom: var(--space-8);
+}
+
+.step-wizard-header {
+  display: flex;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.step-indicator {
+  flex: 1;
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: all var(--duration-fast);
+  position: relative;
+}
+
+.step-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  transition: all var(--duration-fast);
+}
+
+.step-indicator.active {
+  color: var(--text-primary);
+}
+
+.step-indicator.active::after {
+  background: var(--gradient-brand);
+}
+
+.step-indicator.completed {
+  color: var(--accent-success);
+}
+
+.step-indicator.completed::after {
+  background: var(--accent-success);
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-indicator.active .step-number {
+  background: var(--gradient-brand);
+  color: white;
+}
+
+.step-indicator.completed .step-number {
+  background: var(--accent-success);
+  color: white;
+}
+
+.step-indicator.completed .step-number::after {
+  content: '✓';
+}
+
+.step-label {
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 640px) {
+  .step-label {
+    display: none;
+  }
+}
+
+/* Step Content */
+.step-content {
+  padding: var(--space-8);
+}
+
+.step-panel {
+  display: none;
+  animation: fadeIn var(--duration-base) var(--ease-default);
+}
+
+.step-panel.active {
+  display: block;
+}
+
+/* Step 1: Scripture Selection */
+.testament-toggle {
+  display: flex;
+  background: var(--bg-tertiary);
+  padding: var(--space-1);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testament-toggle button {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  transition: all var(--duration-fast);
+}
+
+.testament-toggle button.active {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.scripture-selectors {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-4);
+  max-width: 600px;
+  margin: 0 auto var(--space-6);
+}
+
+@media (max-width: 640px) {
+  .scripture-selectors {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Step 2: Difficulty */
+.difficulty-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .difficulty-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.difficulty-card {
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--duration-fast);
+}
+
+.difficulty-card:hover {
+  border-color: var(--border-default);
+  transform: translateY(-2px);
+}
+
+.difficulty-card.active {
+  border-color: var(--brand-blue);
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.difficulty-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-3);
+}
+
+.difficulty-card h4 {
+  margin-bottom: var(--space-1);
+}
+
+.difficulty-card p {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.difficulty-card .badge {
+  margin-top: var(--space-3);
+}
+
+/* Step Actions */
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step-actions .btn-back {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default);
+}
+
+.step-actions .btn-back:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+/* Quick Actions */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quick-action-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  transition: all var(--duration-fast);
+  cursor: pointer;
+}
+
+.quick-action-card:hover {
+  border-color: var(--border-default);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.quick-action-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.quick-action-card.featured .quick-action-icon {
+  background: var(--gradient-brand);
+}
+
+.quick-action-content h4 {
+  margin-bottom: var(--space-1);
+}
+
+.quick-action-content p {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Daily Verse */
+.daily-verse-card {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(124, 58, 237, 0.1));
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  text-align: center;
+  margin-top: var(--space-8);
+}
+
+.daily-verse-label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--brand-cyan);
+  margin-bottom: var(--space-4);
+}
+
+.daily-verse-text {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+  font-style: italic;
+}
+
+.daily-verse-ref {
+  color: var(--text-muted);
+  margin-bottom: var(--space-6);
+}
+
+/* Section Headers */
+.section-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.section-title i {
+  color: var(--brand-cyan);
+}
